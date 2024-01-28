@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'lato';
+  src: url('../assets/fonts/Lato/Lato-Regular.ttf');
+}
+@font-face {
+  font-family: 'grape-nuts';
+  src: url('../assets/fonts/Grape_Nuts/GrapeNuts-Regular.ttf');
+}
+
+::ng-deep .font-lato {
+  font-family: 'lato' !important;
+}
+::ng-deep .font-grape-nuts {
+  font-family: 'grape-nuts' !important;
+}

@@ -1,0 +1,7 @@
+{
+  "name": "farm_app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

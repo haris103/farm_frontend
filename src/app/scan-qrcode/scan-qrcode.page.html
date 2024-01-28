@@ -1,0 +1,16 @@
+<ion-content [fullscreen]="true">
+  <app-header [title]="'Scan QRcode'" [color]="'subscriber'"></app-header>
+  <div class="w-full h-4/6 flex justify-center items-center">
+    <!-- <qrcode
+      [qrdata]="'HElloo'"
+
+    ></qrcode> -->
+    <qr-code value="Yo world!" size="300" errorCorrectionLevel="M"></qr-code>
+
+    <!-- <qrcode [qrdata]="'Your data string'" [width]="256" [errorCorrectionLevel]="'M'"></qrcode> -->
+
+  </div>
+  <div class="flex justify-center items-center mt-2 mx-4 rounded-md" style="background-color: #AFF4C6;">
+    <p class="py-3 rounded-md font-lato text-black">SCAN</p>
+  </div>
+</ion-content>

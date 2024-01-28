@@ -1,0 +1,122 @@
+<ion-content [fullscreen]="true">
+  <div class="flex justify-center items-center">
+    <img src="../../assets/images/logo.png" class="h-52" alt="">
+  </div>
+  <div class="ml-5 mr-5">
+    <div class="flex justify-center items-center">
+      <p class="font-bold font-grape-nuts text-5xl text-green-600">Create Account</p>
+    </div>
+    <form [formGroup]="loginForm!">
+      <div class="col-span-12 mb-2 mt-2">
+        <label class="block text-sm font-medium font-serif text-black font-lato">Name
+          <span *ngIf="this.loginForm?.get('name')?.hasError('required')" class="text-red-400 text-2xl">*</span>
+        </label>
+        <input formControlName="name" type="text"
+          class="mt-1 block w-full placeholder:font-sans rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm placeholder:font-lato"
+          placeholder="Enter Full Name">
+      </div>
+
+      <div class="col-span-12 mb-2 mt-2">
+        <label class="block text-sm font-medium font-serif text-black font-lato">Email
+          <span *ngIf="this.loginForm?.get('email')?.hasError('required')" class="text-red-400 text-2xl">*</span>
+        </label>
+        <input formControlName="email" type="email"
+          class="mt-1 block w-full placeholder:font-sans rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm placeholder:font-lato"
+          placeholder="Enter Email Address">
+      </div>
+      <span *ngIf="this.loginForm?.get('email')?.hasError('invalidEmail')" class="text-red-400 font-lato text-sm">Invalid email format</span>
+
+
+      <div class="col-span-12 mb-4">
+        <label for="password" class="block text-sm font-medium font-serif text-black font-lato">
+
+          Password
+          <span *ngIf="this.loginForm?.get('password')?.hasError('required')" class="text-red-400 text-2xl">*</span>
+        </label>
+        <div class="flex">
+          <input formControlName="password" [type]="!showPassword? 'password': 'text'" id="password" name="password"
+            type="text" autocomplete="current-password" required
+            class="mt-1 block w-full placeholder:font-sans rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+            placeholder="Enter Password" />
+          <div class="absolute right-8 mt-4">
+            <a class="type-toggle" (click)="toggleShow()">
+              <ion-icon class="show-option" size="small" [hidden]="showPassword" name="eye-off-outline"></ion-icon>
+              <ion-icon class="hide-option" size="small" [hidden]="!showPassword" name="eye-outline"></ion-icon>
+            </a>
+          </div>
+        </div>
+        <span *ngIf="this.loginForm?.get('confirm_password')?.hasError('passwordMismatch')"
+          class="text-red-400 font-lato text-sm">Password should match</span>
+          <span *ngIf="this.loginForm?.get('password')?.hasError('minlength')" class="text-red-400 font-lato text-sm">
+            Password should be at least 8 characters long
+          </span>
+
+      </div>
+      <div class="col-span-12 mb-4">
+        <label for="confirm_password" class="block text-sm font-medium font-serif text-black font-lato">
+          Confirm password
+          <span *ngIf="this.loginForm?.get('confirm_password')?.hasError('required')"
+            class="text-red-400 text-2xl">*</span> </label>
+        <div class="flex">
+          <input formControlName="confirm_password" [type]="!showPassword_2 ? 'password' : 'text'" id="confirm_password"
+            name="confirm_password" type="password" autocomplete="current-password" required
+            class="mt-1 block w-full placeholder:font-sans rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+            placeholder="Confirm password" />
+          <div class="absolute right-8 mt-4">
+            <a class="type-toggle" (click)="toggleShow_2()">
+              <ion-icon class="show-option" size="small" [hidden]="showPassword_2" name="eye-off-outline"></ion-icon>
+              <ion-icon class="hide-option" size="small" [hidden]="!showPassword_2" name="eye-outline"></ion-icon>
+            </a>
+          </div>
+        </div>
+        <span *ngIf="this.loginForm?.get('confirm_password')?.hasError('passwordMismatch')"
+          class="text-red-400 font-lato text-sm">Password should match</span>
+          <span *ngIf="this.loginForm?.get('password')?.hasError('minlength')" class="text-red-400 font-lato text-sm">
+            Password should be at least 8 characters long
+          </span>
+
+      </div>
+
+
+
+      <div class="col-span-12 mb-2">
+        <label class="block text-sm font-medium font-serif text-black font-lato">
+          Phone Number
+          <span *ngIf="this.loginForm?.get('phone_no')?.hasError('required')" class="text-red-400 text-2xl">*</span>
+
+
+        </label>
+        <input type="number" formControlName="phone_no"
+          class="mt-1 block w-full placeholder:font-sans rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+          placeholder="Enter Phone number">
+      </div>
+      <div class="text-center font-grape-nuts text-black text-2xl">Please select if you would like to be an owner or a
+        user</div>
+
+      <div class="flex justify-around items-center">
+        <div class="flex items-center">
+          <input type="radio" id="ownerRadio" formControlName="role" value="owner" class="hidden"
+            [checked]="loginForm?.get('role')?.value === 'owner'" />
+          <label for="ownerRadio"
+            class="cursor-pointer px-4 py-2 rounded-md font-lato text-black border border-solid border-transparent hover:border-black transition duration-300"
+            [class.selected]="loginForm?.get('role')?.value === 'owner'" style="background-color: #AFF4C6;">
+            OWNER
+          </label>
+        </div>
+        <div class="flex items-center">
+          <input type="radio" id="userRadio" formControlName="role" value="user" class="hidden"
+            [checked]="loginForm?.get('role')?.value === 'user'" />
+          <label for="userRadio"
+            class="cursor-pointer px-4 py-2 rounded-md font-lato text-black border border-solid border-transparent hover:border-black transition duration-300"
+            [class.selected]="loginForm?.get('role')?.value === 'user'" style="background-color: #AFF4C6;">
+            USER
+          </label>
+        </div>
+      </div>
+
+    </form>
+    <div (click)="createAccount()" class="flex justify-around items-center mt-2">
+      <div class="px-20 py-2 rounded-md font-lato text-black" style="background-color: #AFF4C6;">Create Account</div>
+    </div>
+  </div>
+</ion-content>

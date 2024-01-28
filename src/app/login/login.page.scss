@@ -1,0 +1,26 @@
+ion-button.create__button {
+  --background: #93e9be;
+  --background-hover: #9ce0be;
+  --background-activated: #88f4be;
+  --background-focused: #88f4be;
+  --color: white;
+  --border-radius: 5px;
+  --border-width: 1px;
+  --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+  // --padding-top: 5px;
+  // --padding-bottom: 5px;
+
+}
+ion-button.role__button {
+  --background: #f49588;
+  --background-hover: #f49588;
+  --background-activated: #f49588;
+  --background-focused: #f49588;
+  --color: white;
+  --border-radius: 5px;
+  --border-width: 1px;
+  --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+  // --padding-top: 5px;
+  // --padding-bottom: 5px;
+  padding: none !important;
+}
