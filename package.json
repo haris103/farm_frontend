@@ -10,6 +10,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
+    "build": "npm i",
     "build:prod": "ng build --prod"
 
   },
