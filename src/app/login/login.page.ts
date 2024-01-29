@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { URL_Localhost } from 'src/assets/URLs';
+import { API_Localhost, Localhost_URL } from 'src/assets/URLs';
 
 @Component({
   selector: 'app-login',
@@ -34,7 +34,7 @@ export class LoginPage implements OnInit {
   login() {
     if (this.loginForm?.valid) {
       this.http
-        .post(`${URL_Localhost}api/user/login`, this.loginForm?.value)
+        .post(`${API_Localhost}api/user/login`, this.loginForm?.value)
         .subscribe(
           (response: any) => {
             console.log('RESPONSE:',response);

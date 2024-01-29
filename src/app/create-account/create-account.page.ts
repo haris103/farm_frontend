@@ -7,7 +7,7 @@ import {
 } from '@angular/forms';
 
 import { HttpClient } from '@angular/common/http';
-import { URL_Localhost } from 'src/assets/URLs';
+import { API_Localhost } from 'src/assets/URLs';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
@@ -96,7 +96,7 @@ export class CreateAccountPage implements OnInit {
 
     if (this.loginForm?.valid) {
       this.http
-        .post(`${URL_Localhost}api/user/register`, this.loginForm?.value)
+        .post(`${API_Localhost}api/user/register`, this.loginForm?.value)
         .subscribe(
           (response: any) => {
             if (response.is_created) {

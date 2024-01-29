@@ -1,5 +1,5 @@
-// export const URL_Localhost = 'http://localhost:4000/'
-// export const URL_Localhost = 'https://benevolent-griffin-d98b34.netlify.app/'
-export const URL_Localhost = 'https://marvelous-hamster-651aba.netlify.app/'
+export const Localhost_URL = 'http://localhost:4000/'
+export const API_Localhost = 'https://honesty-box.onrender.com/'
+
 
 
